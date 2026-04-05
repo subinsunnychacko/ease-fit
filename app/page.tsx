@@ -2,6 +2,7 @@ import HeroSection from "@/components/home/HeroSection";
 import PainPointsMarquee from "@/components/home/PainPointsMarquee";
 import OutcomesSection from "@/components/home/Outcomessection";
 import FeaturesSection from "@/components/home/Featuressection";
+import SearchIntentSection from "@/components/home/SearchIntentSection";
 import BottomCTA from "@/components/home/Bottomcta";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
 				<PainPointsMarquee />
 				<OutcomesSection />
 				<FeaturesSection />
+				<SearchIntentSection />
 				<BottomCTA />
 			</main>
 

@@ -11,6 +11,8 @@ const dmSans = DM_Sans({
 	weight: ["400", "500", "600", "700", "800", "900"],
 });
 
+const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
+
 export const viewport: Viewport = {
 	themeColor: "#070b14",
 	width: "device-width",
@@ -21,14 +23,18 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
 	metadataBase: new URL(siteUrl),
 	title: {
-		default: "EaseFIT — One Platform. Zero Chaos. AI-Powered Gym Management",
+		default: "EaseFIT | AI Gym Management Software for Solo Gym Owners",
 		template: "%s | EaseFIT",
 	},
 	description:
-		"EaseFIT replaces the patchwork of booking tools, workout loggers, and missed-call voicemails for solo gym owners — starting free, scaling with you. AI receptionist, retention tracking, and performance reports in one platform.",
+		"EaseFIT is AI gym management software for solo gym owners, boutique studios, and personal trainers. Run bookings, attendance, retention, and AI receptionist workflows from one platform.",
 	keywords: [
 		"gym management software",
 		"AI gym receptionist",
+		"gym software for solo gym owners",
+		"gym member retention software",
+		"gym booking software",
+		"gym CRM software",
 		"fitness studio software",
 		"solo gym owner tools",
 		"gym booking system",
@@ -41,6 +47,10 @@ export const metadata: Metadata = {
 	authors: [{ name: "EaseFIT" }],
 	creator: "EaseFIT",
 	publisher: "EaseFIT",
+	category: "Gym Management Software",
+	verification: googleSiteVerification
+		? { google: googleSiteVerification }
+		: undefined,
 	robots: {
 		index: true,
 		follow: true,
@@ -57,24 +67,15 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		url: siteUrl,
 		siteName: "EaseFIT",
-		title: "EaseFIT — One Platform. Zero Chaos.",
+		title: "EaseFIT | AI Gym Management Software for Solo Gym Owners",
 		description:
-			"AI-powered gym management for solo fitness operators. Replace 5+ tools with one platform. Starting at $49/mo.",
-		images: [
-			{
-				url: "/og-image.png",
-				width: 1200,
-				height: 630,
-				alt: "EaseFIT — One Platform. Zero Chaos.",
-			},
-		],
+			"Replace disconnected booking, attendance, retention, and receptionist tools with one AI-powered gym management platform built for solo operators.",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "EaseFIT — One Platform. Zero Chaos.",
+		title: "EaseFIT | AI Gym Management Software for Solo Gym Owners",
 		description:
-			"AI-powered gym management for solo fitness operators. Replace 5+ tools with one platform.",
-		images: ["/og-image.png"],
+			"AI gym management software for solo gym owners with booking, retention workflows, and AI receptionist tools in one platform.",
 		creator: "@easefit",
 	},
 	alternates: {
@@ -82,28 +83,39 @@ export const metadata: Metadata = {
 	},
 };
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "SoftwareApplication",
-	name: "EaseFIT",
-	applicationCategory: "BusinessApplication",
-	operatingSystem: "Web",
-	description:
-		"AI-powered gym management platform for solo fitness operators. Booking, retention AI, voice receptionist, and performance reports — all in one.",
-	url: siteUrl,
-	offers: {
-		"@type": "Offer",
-		price: "49",
-		priceCurrency: "USD",
-		priceValidUntil: "2026-12-31",
-		description: "Starting plan for solo gym owners",
+const jsonLd = [
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		name: "EaseFIT",
+		url: siteUrl,
+		description:
+			"AI gym management software for solo gym owners, boutique studios, and personal trainers.",
 	},
-	aggregateRating: {
-		"@type": "AggregateRating",
-		ratingValue: "4.9",
-		ratingCount: "120",
+	{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		name: "EaseFIT",
+		url: siteUrl,
 	},
-};
+	{
+		"@context": "https://schema.org",
+		"@type": "SoftwareApplication",
+		name: "EaseFIT",
+		applicationCategory: "BusinessApplication",
+		operatingSystem: "Web",
+		description:
+			"AI gym management platform for solo fitness operators. Booking, retention automation, voice receptionist, and reporting in one place.",
+		url: siteUrl,
+		offers: {
+			"@type": "Offer",
+			price: "49",
+			priceCurrency: "USD",
+			priceValidUntil: "2026-12-31",
+			description: "Starting plan for solo gym owners",
+		},
+	},
+];
 
 export default function RootLayout({
 	children,

@@ -3,6 +3,21 @@ import { absoluteUrl } from "@/lib/site";
 
 const routes = [
 	{ path: "/", priority: 1, changeFrequency: "weekly" as const },
+	{
+		path: "/gym-management-software",
+		priority: 0.9,
+		changeFrequency: "weekly" as const,
+	},
+	{
+		path: "/ai-gym-receptionist",
+		priority: 0.85,
+		changeFrequency: "weekly" as const,
+	},
+	{
+		path: "/gym-member-retention-software",
+		priority: 0.85,
+		changeFrequency: "weekly" as const,
+	},
 	{ path: "/features", priority: 0.9, changeFrequency: "weekly" as const },
 	{ path: "/pricing", priority: 0.9, changeFrequency: "weekly" as const },
 	{ path: "/why-easefit", priority: 0.8, changeFrequency: "weekly" as const },
