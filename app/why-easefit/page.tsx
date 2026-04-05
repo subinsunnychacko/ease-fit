@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
 	title: "Why EaseFIT",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 		title: "Why EaseFIT — Not Just Another Gym App",
 		description:
 			"The only platform combining class booking, workout logging, and AI voice automation for solo practitioners.",
-		url: "https://ease.fit/why-easefit",
+		url: absoluteUrl("/why-easefit"),
 		images: [
 			{
 				url: "/og-why-easefit.png",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
 			"The only platform combining class booking, workout logging, and AI voice automation at a price that makes sense.",
 	},
 	alternates: {
-		canonical: "https://ease.fit/why-easefit",
+		canonical: absoluteUrl("/why-easefit"),
 	},
 };
 
@@ -43,7 +44,7 @@ const jsonLd = {
 	"@context": "https://schema.org",
 	"@type": "WebPage",
 	name: "Why EaseFIT",
-	url: "https://ease.fit/why-easefit",
+	url: absoluteUrl("/why-easefit"),
 	description:
 		"EaseFIT occupies a genuinely defensible market position: the only platform combining class booking, workout logging, and AI voice automation for solo practitioners.",
 };

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FeatureBlock from "@/components/features/FeatureBlock";
 import ComparisonTable from "@/components/features/ComparisonTable";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
 	title: "Features",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 		title: "Features — EaseFIT",
 		description:
 			"One platform. Six tiers. Zero excuses for missing bookings, losing members, or working weekends.",
-		url: "https://ease.fit/features",
+		url: absoluteUrl("/features"),
 		images: [
 			{
 				url: "/og-features.png",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
 			"AI-powered gym management: booking, retention, voice receptionist, and reports in one platform.",
 	},
 	alternates: {
-		canonical: "https://ease.fit/features",
+		canonical: absoluteUrl("/features"),
 	},
 };
 
@@ -46,7 +47,7 @@ const jsonLd = {
 	name: "EaseFIT Features",
 	description:
 		"Explore EaseFIT's complete feature set for solo gym owners — unified booking, AI retention, voice receptionist, and performance reports.",
-	url: "https://ease.fit/features",
+	url: absoluteUrl("/features"),
 	mainEntity: {
 		"@type": "SoftwareApplication",
 		name: "EaseFIT",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PricingCard from "@/components/pricing/PricingCard";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
 	title: "Pricing",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 		title: "Pricing — EaseFIT",
 		description:
 			"A value ladder that grows with you. Start free, upgrade when you see results. First 10 founding members get 50% off.",
-		url: "https://ease.fit/pricing",
+		url: absoluteUrl("/pricing"),
 		images: [
 			{
 				url: "/og-pricing.png",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
 			"Six tiers from free to $599/mo. No contracts, no setup fees on self-serve tiers.",
 	},
 	alternates: {
-		canonical: "https://ease.fit/pricing",
+		canonical: absoluteUrl("/pricing"),
 	},
 };
 
@@ -42,7 +43,7 @@ const jsonLd = {
 	"@context": "https://schema.org",
 	"@type": "WebPage",
 	name: "EaseFIT Pricing",
-	url: "https://ease.fit/pricing",
+	url: absoluteUrl("/pricing"),
 	mainEntity: {
 		"@type": "Product",
 		name: "EaseFIT",

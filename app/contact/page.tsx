@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/contact/ContactForm";
 import Footer from "@/components/contact/ContactFooter";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
 	title: "Contact",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 		title: "Get Started — EaseFIT",
 		description:
 			"Stop losing members. Start growing your gym. 10 founding spots at 50% off.",
-		url: "https://ease.fit/contact",
+		url: absoluteUrl("/contact"),
 		images: [
 			{
 				url: "/og-contact.png",
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
 			"Claim a founding spot at 50% off for 3 months. No contracts, no setup fees.",
 	},
 	alternates: {
-		canonical: "https://ease.fit/contact",
+		canonical: absoluteUrl("/contact"),
 	},
 };
 
@@ -43,7 +44,7 @@ const jsonLd = {
 	"@context": "https://schema.org",
 	"@type": "ContactPage",
 	name: "Get Started with EaseFIT",
-	url: "https://ease.fit/contact",
+	url: absoluteUrl("/contact"),
 	description: "Reserve a founding spot or book a 2-minute demo of EaseFIT.",
 };
 

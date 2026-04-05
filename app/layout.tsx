@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
+import { siteUrl } from "@/lib/site";
 
 const dmSans = DM_Sans({
 	subsets: ["latin"],
@@ -18,7 +19,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://ease.fit"),
+	metadataBase: new URL(siteUrl),
 	title: {
 		default: "EaseFIT — One Platform. Zero Chaos. AI-Powered Gym Management",
 		template: "%s | EaseFIT",
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: "website",
 		locale: "en_US",
-		url: "https://ease.fit",
+		url: siteUrl,
 		siteName: "EaseFIT",
 		title: "EaseFIT — One Platform. Zero Chaos.",
 		description:
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
 		creator: "@easefit",
 	},
 	alternates: {
-		canonical: "https://ease.fit",
+		canonical: siteUrl,
 	},
 };
 
@@ -89,7 +90,7 @@ const jsonLd = {
 	operatingSystem: "Web",
 	description:
 		"AI-powered gym management platform for solo fitness operators. Booking, retention AI, voice receptionist, and performance reports — all in one.",
-	url: "https://ease.fit",
+	url: siteUrl,
 	offers: {
 		"@type": "Offer",
 		price: "49",
