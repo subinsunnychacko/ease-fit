@@ -13,7 +13,7 @@ const navLinks = [
 ];
 
 const headerCtaClass =
-	"inline-flex min-h-10 items-center justify-center rounded-[8px] bg-[#7C3AED] px-4 py-3 text-[13px] font-semibold leading-[16px] text-white transition-all duration-200 hover:bg-[#6D28D9] hover:shadow-[0_16px_36px_rgba(124,58,237,0.28)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4B5FD]";
+	"min-h-10 items-center justify-center rounded-[8px] bg-[#7C3AED] px-4 py-3 text-[13px] font-semibold leading-[16px] text-white transition-all duration-200 hover:bg-[#6D28D9] hover:shadow-[0_16px_36px_rgba(124,58,237,0.28)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C4B5FD]";
 
 export default function Navbar() {
 	const [mobileOpen, setMobileOpen] = useState(false);
