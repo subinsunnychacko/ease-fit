@@ -50,9 +50,10 @@ export default function HeroSection() {
 
 				{/* Subtext */}
 				<p className="mx-auto mb-8 max-w-115 text-[14px] leading-[1.7] text-slate-400 md:text-[15px]">
-					EaseFIT replaces the patchwork of booking tools, workout loggers,
-					and missed-call voicemails for solo gym owners — starting free,
-					scaling with you.
+					The all-in-one gym management platform and AI gym software that
+					replaces booking tools, workout loggers, and missed-call voicemails
+					for solo gym owners and boutique studios — starting free, scaling
+					with you.
 				</p>
 
 				{/* CTAs */}

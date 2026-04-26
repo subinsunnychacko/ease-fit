@@ -11,33 +11,33 @@ const features: Feature[] = [
 		tag: "Pain Point",
 		tagColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
 		title: "Unified Book & Track Engine",
-		quote: "\u201CWhat if one app replaced five?\u201D",
+		quote: "What if one app replaced five?",
 		description:
-			"Class scheduling + workout logging in one dashboard. No more juggling Vagaro, TrueCoach, and spreadsheets.",
+			"Class booking software and workout logging in one dashboard. No more juggling Vagaro, TrueCoach, and spreadsheets.",
 	},
 	{
 		tag: "Retention AI",
 		tagColor: "bg-purple-500/10 text-purple-400 border-purple-500/20",
 		title: "Proactive Retention AI",
-		quote: "\u201CWhat if your gym called before members quit?\u201D",
+		quote: "What if your gym called before members quit?",
 		description:
-			"Attendance tracking flags at-risk members. AI calls reach out before they disappear.",
+			"Gym member retention features with attendance pattern tracking that flags at-risk members. AI calls reach out before they disappear.",
 	},
 	{
 		tag: "AI Voice",
 		tagColor: "bg-sky-500/10 text-sky-400 border-sky-500/20",
 		title: "24/7 AI Voice Receptionist",
-		quote: "\u201CNever miss a booking call \u2014 even while coaching.\u201D",
+		quote: "Never miss a booking call — even while coaching.",
 		description:
-			"Answers calls, books classes, captures leads around the clock. Your front desk. Always on.",
+			"AI receptionist for gyms that answers calls, books classes, and captures leads around the clock. Your front desk always on.",
 	},
 	{
 		tag: "Insights",
 		tagColor: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
 		title: "AI Performance Reports",
-		quote: "\u201CWhat if your gym told you what\u2019s working?\u201D",
+		quote: "What if your gym told you what's working?",
 		description:
-			"Auto-generated weekly reports, real-time occupancy, class fill rates \u2014 no spreadsheets needed.",
+			"Auto-generated weekly reports, real-time occupancy, class fill rates — gym management software features that need no spreadsheets.",
 	},
 ];
 
@@ -78,7 +78,7 @@ export default function FeaturesSection() {
 								{feature.quote}
 							</p>
 
-							<p className="mt-2.5 text-[12.5px] leading-[1.65] text-slate-400">
+							<p className="mt-4 text-[12px] leading-[1.6] text-slate-300">
 								{feature.description}
 							</p>
 						</article>

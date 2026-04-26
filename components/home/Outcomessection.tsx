@@ -4,7 +4,7 @@ const outcomes = [
 		title: "Simplify",
 		subtitle: "One Platform, Zero Chaos",
 		description:
-			"Replace 3\u20135 disconnected tools. Booking, tracking, attendance, billing and communication \u2014 all connected.",
+			"Replace 3–5 disconnected tools with one gym management system. Booking, tracking, attendance, and communication — all connected in your all-in-one gym software.",
 		stat: "Up to 70% admin time reduction",
 	},
 	{
@@ -12,15 +12,15 @@ const outcomes = [
 		title: "Retain",
 		subtitle: "Keep Members Coming Back",
 		description:
-			"AI tracks attendance patterns, flags at-risk members, and proactively calls them before they silently churn.",
-		stat: "20\u201340% retention improvement with AI calls",
+			"AI gym CRM tracks attendance patterns, flags at-risk members, and makes proactive retention calls before members silently churn.",
+		stat: "20–40% retention improvement with AI calls",
 	},
 	{
 		number: "03",
 		title: "Grow",
 		subtitle: "Never Miss an Opportunity",
 		description:
-			"AI voice receptionist answers every call 24/7, books classes, and captures leads \u2014 even while you coach.",
+			"AI gym receptionist answers every call 24/7, books classes via voice, and captures missed leads — even while you coach.",
 		stat: "62% of voicemail callers never call back",
 	},
 ];

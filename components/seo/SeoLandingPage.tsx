@@ -1,4 +1,7 @@
 import Link from "next/link";
+import FaqAccordion from "@/components/faq/FaqAccordion";
+import SocialProof from "@/components/common/SocialProof";
+import CTASection from "@/components/common/CTASection";
 
 type ContentCard = {
 	title: string;
@@ -68,6 +71,8 @@ export default function SeoLandingPage({
 						</div>
 					</div>
 				</section>
+
+				<SocialProof />
 
 				<section className="px-6 py-8 md:py-10 lg:px-8">
 					<div className="mx-auto grid max-w-300 gap-5 lg:grid-cols-[1.1fr_0.9fr]">
@@ -145,46 +150,11 @@ export default function SeoLandingPage({
 							className="mb-8 text-[24px] font-bold tracking-tight text-white md:text-[28px]">
 							Frequently asked questions
 						</h2>
-						<div className="grid gap-5 md:grid-cols-2">
-							{faqs.map((faq) => (
-								<article
-									key={faq.question}
-									className="rounded-xl border border-white/6 bg-[#0c1018] p-5">
-									<h3 className="text-[13px] font-bold text-white">
-										{faq.question}
-									</h3>
-									<p className="mt-3 text-[12.5px] leading-[1.7] text-slate-400">
-										{faq.answer}
-									</p>
-								</article>
-							))}
-						</div>
+						<FaqAccordion items={faqs} />
 					</div>
 				</section>
 
-				<section className="px-6 pt-8 pb-16 md:pt-10 md:pb-20 lg:px-8">
-					<div className="mx-auto max-w-175 rounded-[18px] border border-[#181C2B] bg-[#0c1018] px-6 py-10 text-center md:px-12">
-						<p className="text-[11px] font-bold tracking-[0.15em] text-emerald-400 uppercase">
-							Next Step
-						</p>
-						<h2 className="mt-3 text-[24px] font-bold tracking-tight text-white md:text-[30px]">
-							See how EaseFIT fits your gym workflow
-						</h2>
-						<p className="mx-auto mt-4 max-w-120 text-[13px] leading-[1.75] text-slate-400">
-							Book a short walkthrough, compare plans, and see how your
-							team can replace scattered booking and admin tools with one
-							platform.
-						</p>
-						<div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-							<Link href="/contact" className={primaryCtaClass}>
-								Book a 2-Min Demo
-							</Link>
-							<Link href="/features" className={secondaryCtaClass}>
-								Explore Features
-							</Link>
-						</div>
-					</div>
-				</section>
+				<CTASection />
 			</main>
 
 			<footer className="border-t border-white/5 px-6 py-6">

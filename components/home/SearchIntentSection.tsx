@@ -3,21 +3,21 @@ import Link from "next/link";
 const solutionPages = [
 	{
 		href: "/gym-management-software",
-		title: "Gym Management Software",
+		title: "Gym Management Software for Solo Gym Owners",
 		description:
-			"Unify bookings, attendance, workouts, and member operations in one platform built for solo gym owners.",
+			"All-in-one gym management platform — unify bookings, attendance, workouts, and member operations in one system for small gyms and boutique studios.",
 	},
 	{
 		href: "/ai-gym-receptionist",
 		title: "AI Gym Receptionist",
 		description:
-			"Capture missed calls, answer common questions, and book classes with an AI receptionist that works after hours.",
+			"24/7 gym call answering software — capture missed calls, answer common questions, and book classes with 24/7 AI phone answering that works after hours.",
 	},
 	{
 		href: "/gym-member-retention-software",
 		title: "Gym Member Retention Software",
 		description:
-			"Spot churn risk earlier, re-engage members faster, and turn attendance data into retention actions.",
+			"Gym churn prevention tool — spot member retention risk earlier, re-engage members faster, and turn attendance data into retention actions.",
 	},
 ];
 

@@ -1,21 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { absoluteUrl } from "@/lib/site";
+import { SEO_KEYWORDS, getAllKeywordsForRoute } from "@/lib/seo/keywords";
+
+const seo = SEO_KEYWORDS["/why-easefit"];
 
 export const metadata: Metadata = {
-	title: "Why EaseFIT",
-	description:
-		"EaseFIT is the only platform combining class booking, workout logging, and AI voice automation for solo gym owners — at a price that makes sense. Discover the defensible market gap we fill.",
-	keywords: [
-		"why EaseFIT",
-		"gym software comparison",
-		"solo gym owner platform",
-		"gym management market gap",
-		"AI gym automation",
-		"fitness studio competitive advantage",
-		"gym software for personal trainers",
-		"boutique studio software",
-	],
+	title: "Mindbody Alternative",
+	description: `EaseFIT is the ${seo.primary} — a ${seo.secondary[0]} built for solo gym owners that combines class booking, workout logging, and AI voice automation.`,
+	keywords: getAllKeywordsForRoute("/why-easefit"),
 	openGraph: {
 		title: "Why EaseFIT — Not Just Another Gym App",
 		description:
@@ -26,7 +19,7 @@ export const metadata: Metadata = {
 				url: "/og-why-easefit.png",
 				width: 1200,
 				height: 630,
-				alt: "Why EaseFIT — The gap nobody else fills",
+				alt: "Why EaseFIT - the only all-in-one platform combining gym booking software, member retention tools, and AI receptionist for solo gym owners",
 			},
 		],
 	},
@@ -206,7 +199,7 @@ export default function WhyEaseFITPage() {
 
 				{/* ── Market Position ── */}
 				<section
-					className="px-6 py-12 md:py-16 lg:px-8"
+					className="px-6 py-10 md:py-12 lg:px-8"
 					aria-labelledby="market-heading">
 					<div className="mx-auto max-w-300">
 						<p className="mb-2.5 text-[11px] font-bold tracking-[0.15em] text-emerald-400 uppercase">
@@ -271,7 +264,7 @@ export default function WhyEaseFITPage() {
 
 				{/* ── Ideal Customer Profile ── */}
 				<section
-					className="px-6 py-12 md:py-16 lg:px-8"
+					className="px-6 py-10 md:py-12 lg:px-8"
 					aria-labelledby="icp-heading">
 					<div className="mx-auto max-w-300">
 						<p className="mb-2.5 text-[11px] font-bold tracking-[0.15em] text-emerald-400 uppercase">
@@ -315,7 +308,7 @@ export default function WhyEaseFITPage() {
 
 				{/* ── Defensibility ── */}
 				<section
-					className="px-6 py-12 md:py-16 lg:px-8"
+					className="px-6 py-10 md:py-12 lg:px-8"
 					aria-labelledby="defensibility-heading">
 					<div className="mx-auto max-w-300">
 						<p className="mb-2.5 text-[11px] font-bold tracking-[0.15em] text-emerald-400 uppercase">
@@ -354,7 +347,7 @@ export default function WhyEaseFITPage() {
 
 				{/* ── Customer Mindset ── */}
 				<section
-					className="px-6 py-12 md:py-16 lg:px-8"
+					className="px-6 py-10 md:py-12 lg:px-8"
 					aria-labelledby="mindset-heading">
 					<div className="mx-auto max-w-300">
 						<p className="mb-2.5 text-[11px] font-bold tracking-[0.15em] text-emerald-400 uppercase">
@@ -388,12 +381,10 @@ export default function WhyEaseFITPage() {
 				</section>
 
 				{/* ── Bottom CTA ── */}
-				<section className="px-6 py-16 md:py-20 lg:px-8">
+				<section className="px-6 pt-6 pb-12 md:pt-8 md:pb-14 lg:px-8">
 					<div className="mx-auto max-w-175 text-center">
-						<h2 className="text-[24px] font-bold tracking-tight md:text-[32px]">
-							<span className="bg-clip-text text-transparent">
-								The model works. The market exists. The tech is proven.
-							</span>
+						<h2 className="text-[24px] font-bold tracking-tight text-white md:text-[32px]">
+							The model works. The market exists. The tech is proven.
 						</h2>
 						<p className="mx-auto mt-4 max-w-120 text-[13px] leading-[1.7] text-slate-400">
 							EaseFIT is the only platform at the intersection of

@@ -53,7 +53,8 @@ function CellValue({ value }: { value: boolean | string }) {
 				height="16"
 				viewBox="0 0 16 16"
 				fill="none"
-				className="text-emerald-400">
+				className="text-emerald-400"
+				aria-label="Supported feature">
 				<path
 					d="M3.5 8.5L6.5 11.5L12.5 5"
 					stroke="currentColor"
@@ -73,7 +74,7 @@ function CellValue({ value }: { value: boolean | string }) {
 export default function ComparisonTable() {
 	return (
 		<section
-			className="px-6 py-12 md:py-16 lg:px-8"
+			className="px-6 py-10 md:py-12 lg:px-8"
 			aria-labelledby="comparison-heading">
 			<div className="mx-auto max-w-300">
 				<p className="mb-2.5 text-[11px] font-bold tracking-[0.15em] text-emerald-400 uppercase">

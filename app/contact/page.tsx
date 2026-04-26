@@ -2,20 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/contact/ContactForm";
 import Footer from "@/components/contact/ContactFooter";
+import FaqAccordion from "@/components/faq/FaqAccordion";
 import { absoluteUrl } from "@/lib/site";
+import { SEO_KEYWORDS, getAllKeywordsForRoute } from "@/lib/seo/keywords";
+
+const seo = SEO_KEYWORDS["/contact"];
 
 export const metadata: Metadata = {
-	title: "Contact",
-	description:
-		"Get started with EaseFIT — claim one of 10 founding spots at 50% off for 3 months. Book a 2-minute demo or reserve your spot today. No contracts, no setup fees.",
-	keywords: [
-		"EaseFIT demo",
-		"gym software free trial",
-		"EaseFIT contact",
-		"gym management demo",
-		"founding member gym software",
-		"EaseFIT sign up",
-	],
+	title: "Gym Management Software Demo",
+	description: `Book a ${seo.primary} or schedule an ${seo.secondary[0]} to claim a founding-member spot — no contracts, no setup fees, cancel anytime.`,
+	keywords: getAllKeywordsForRoute("/contact"),
 	openGraph: {
 		title: "Get Started — EaseFIT",
 		description:
@@ -26,7 +22,7 @@ export const metadata: Metadata = {
 				url: "/og-contact.png",
 				width: 1200,
 				height: 630,
-				alt: "Get Started with EaseFIT",
+				alt: "Get started with EaseFIT gym management software - claim founding member spot at 50% off with no contracts",
 			},
 		],
 	},
@@ -56,46 +52,46 @@ const trustBadges = [
 ];
 
 const demoPoints = [
-	"Class booking flow from a member\u2019s perspective",
+	"Class booking flow from a member's perspective",
 	"QR attendance check-in in real time",
 	"AI voice receptionist answering a live call",
 	"Member engagement dashboard & at-risk alerts",
 	"AI monthly performance report walkthrough",
-	"Pricing walkthrough \u2014 which tier fits your gym",
+	"Pricing walkthrough — which tier fits your gym",
 ];
 
 const faqs = [
 	{
-		q: "Is there really a free tier?",
-		a: "Yes. Gym members always use EaseFIT for free \u2014 workout logging, class booking, progress tracking. The paid tiers are for gym owners and operators.",
+		question: "Is there really a free tier?",
+		answer: "Yes. Gym members always use EaseFIT for free — workout logging, class booking, progress tracking. The paid tiers are for gym owners and operators.",
 	},
 	{
-		q: "Do I need to sign a contract?",
-		a: "No contracts on any tier. Cancel anytime, no questions asked. Annual plans are available at 2 months free if you want to lock in the discount.",
+		question: "Do I need to sign a contract?",
+		answer: "No contracts on any tier. Cancel anytime, no questions asked. Annual plans are available at 2 months free if you want to lock in the discount.",
 	},
 	{
-		q: "What is the founding member offer exactly?",
-		a: "The first 10 gym owners who sign up get 50% off their chosen tier for the first 3 months. After that, your price locks in at the standard rate \u2014 no surprise increases.",
+		question: "What is the founding member offer exactly?",
+		answer: "The first 10 gym owners who sign up get 50% off their chosen tier for the first 3 months. After that, your price locks in at the standard rate — no surprise increases.",
 	},
 	{
-		q: "How does the AI voice receptionist work?",
-		a: "It answers inbound calls to your gym, greets callers, answers common questions, books available class slots, and logs every inquiry to your dashboard. Available 24/7 on the Premium tier ($299/mo).",
+		question: "How does the AI voice receptionist work?",
+		answer: "It answers inbound calls to your gym, greets callers, answers common questions, books available class slots, and logs every inquiry to your dashboard. Available 24/7 on the Premium tier ($299/mo).",
 	},
 	{
-		q: "Can I switch tiers later?",
-		a: "Absolutely. You can upgrade or downgrade at any time. Moving up is instant. Moving down takes effect at the start of the next billing cycle.",
+		question: "Can I switch tiers later?",
+		answer: "Absolutely. You can upgrade or downgrade at any time. Moving up is instant. Moving down takes effect at the start of the next billing cycle.",
 	},
 	{
-		q: "Is my members\u2019 data secure?",
-		a: "Yes. EaseFIT uses industry-standard encryption for all member data. We are GDPR-aligned and never sell or share member data with third parties.",
+		question: "Is my members' data secure?",
+		answer: "Yes. EaseFIT uses industry-standard encryption for all member data. We are GDPR-aligned and never sell or share member data with third parties.",
 	},
 	{
-		q: "What if I\u2019m already using Vagaro or Mindbody?",
-		a: "We make migration easy. Our onboarding team will help you import your member list and class schedule. Most gyms are fully switched over within a week.",
+		question: "What if I'm already using Vagaro or Mindbody?",
+		answer: "We make migration easy. Our onboarding team will help you import your member list and class schedule. Most gyms are fully switched over within a week.",
 	},
 	{
-		q: "Do I need technical skills to set this up?",
-		a: "No. Basic and Pro tiers are fully self-serve \u2014 setup takes under 30 minutes. Premium and Growth tiers include guided onboarding with a dedicated team member.",
+		question: "Do I need technical skills to set this up?",
+		answer: "No. Basic and Pro tiers are fully self-serve — setup takes under 30 minutes. Premium and Growth tiers include guided onboarding with a dedicated team member.",
 	},
 ];
 
@@ -153,7 +149,7 @@ export default function ContactPage() {
 								Join at 50% off
 							</h2>
 							<p className="mb-6 max-w-100 text-[13px] leading-[1.7] text-slate-400">
-								Lock in half-price access for 3 months. We&apos;ll reach
+								Lock in half-price access for 3 months. We'll reach
 								out within 24 hours to get you set up.
 							</p>
 							<ContactForm />
@@ -175,7 +171,7 @@ export default function ContactPage() {
 							{/* Demo card */}
 							<div className="rounded-xl border border-white/6 bg-[#0c1018] p-6">
 								<p className="mb-4 text-[14px] font-bold text-white">
-									What you&apos;ll see in the demo:
+									What you'll see in the demo:
 								</p>
 								<ul className="space-y-3.5">
 									{demoPoints.map((point) => (
@@ -193,7 +189,7 @@ export default function ContactPage() {
 									href="#demo"
 									className="mt-7 flex items-center justify-center gap-1.5 rounded-lg border border-purple-600 px-5 py-3 text-[13px] font-semibold text-white transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/20">
 									Book a 2-Minute Demo
-									<span aria-hidden="true">&rarr;</span>
+									<span aria-hidden="true">→</span>
 								</Link>
 
 								<p className="mt-3 text-center text-[11px] text-slate-500">
@@ -218,21 +214,7 @@ export default function ContactPage() {
 							Quick answers before you commit
 						</h2>
 
-						<div className="grid gap-5 md:grid-cols-2">
-							{faqs.map((faq) => (
-								<article
-									key={faq.q}
-									className="rounded-xl border border-white/6 bg-[#0c1018] p-5">
-									<h3 className="flex items-start gap-2.5 text-[13px] font-bold text-white">
-										<span className="mt-0.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-purple-400" />
-										{faq.q}
-									</h3>
-									<p className="mt-2.5 text-[12px] leading-[1.7] text-slate-400">
-										{faq.a}
-									</p>
-								</article>
-							))}
-						</div>
+						<FaqAccordion items={faqs} />
 					</div>
 				</section>
 			</main>

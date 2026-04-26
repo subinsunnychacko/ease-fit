@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import { siteUrl } from "@/lib/site";
+import { SEO_KEYWORDS } from "@/lib/seo/keywords";
 
 const dmSans = DM_Sans({
 	subsets: ["latin"],
@@ -107,6 +108,10 @@ const jsonLd = [
 		description:
 			"AI gym management platform for solo fitness operators. Booking, retention automation, voice receptionist, and reporting in one place.",
 		url: siteUrl,
+		keywords: [
+			SEO_KEYWORDS["/"].primary,
+			...SEO_KEYWORDS["/"].secondary,
+		].join(", "),
 		offers: {
 			"@type": "Offer",
 			price: "49",

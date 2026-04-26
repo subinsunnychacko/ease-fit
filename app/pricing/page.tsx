@@ -1,20 +1,15 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PricingCard from "@/components/pricing/PricingCard";
 import { absoluteUrl } from "@/lib/site";
+import { SEO_KEYWORDS, getAllKeywordsForRoute } from "@/lib/seo/keywords";
+
+const seo = SEO_KEYWORDS["/pricing"];
 
 export const metadata: Metadata = {
-	title: "Pricing",
-	description:
-		"EaseFIT pricing starts free for gym members and scales from $49/mo for gym owners. Six tiers, no contracts, 50% off for the first 10 founding members.",
-	keywords: [
-		"gym software pricing",
-		"affordable gym management",
-		"gym CRM pricing",
-		"fitness studio software cost",
-		"free gym member app",
-		"AI gym receptionist pricing",
-		"gym management plans",
-	],
+	title: "Gym Management Software Pricing",
+	description: `EaseFIT ${seo.primary} starts free — ${seo.secondary[0]} with no contracts, founding-member discounts, and tiered plans for growing gyms.`,
+	keywords: getAllKeywordsForRoute("/pricing"),
 	openGraph: {
 		title: "Pricing — EaseFIT",
 		description:
@@ -25,7 +20,7 @@ export const metadata: Metadata = {
 				url: "/og-pricing.png",
 				width: 1200,
 				height: 630,
-				alt: "EaseFIT Pricing Plans",
+				alt: "EaseFIT pricing plans for gym management software ranging from free tier to growth plans with booking, CRM, and AI receptionist features",
 			},
 		],
 	},
@@ -236,7 +231,7 @@ export default function PricingPage() {
 
 				{/* Tier progression bar */}
 				<section
-					className="px-6 py-6 lg:px-8"
+					className="px-6 py-4 lg:px-8"
 					aria-label="Pricing tier progression">
 					<div className="mx-auto max-w-300">
 						<div className="flex flex-wrap items-center gap-x-1.5 gap-y-2 rounded-xl border border-white/6 bg-[#0c1018] px-5 py-3">
@@ -266,7 +261,7 @@ export default function PricingPage() {
 
 				{/* Pricing cards */}
 				<section
-					className="px-6 py-8 md:py-10 lg:px-8"
+					className="px-6 py-6 md:py-8 lg:px-8"
 					aria-labelledby="pricing-heading">
 					<h2 id="pricing-heading" className="sr-only">
 						Pricing Plans
@@ -280,14 +275,11 @@ export default function PricingPage() {
 
 				{/* Early Adopter Offer banner */}
 				<section
-					className="px-6 py-8 md:py-10 lg:px-8"
+					className="px-6 py-6 lg:px-8"
 					aria-label="Early adopter offer">
 					<div className="mx-auto flex max-w-300 flex-col items-start justify-between gap-6 rounded-2xl border border-white/6 bg-[#0c1018] px-8 py-8 sm:flex-row sm:items-center md:px-10">
 						<div>
 							<p className="mb-1.5 text-[15px] font-bold text-white">
-								<span className="mr-1.5" aria-hidden="true">
-									🎯
-								</span>
 								Early Adopter Offer
 							</p>
 							<p className="text-[13px] leading-[1.65] text-slate-400">
@@ -305,7 +297,7 @@ export default function PricingPage() {
 
 				{/* Trust bar */}
 				<section
-					className="px-6 py-8 md:py-10 lg:px-8"
+					className="px-6 py-6 lg:px-8"
 					aria-label="Pricing guarantees">
 					<div className="mx-auto grid max-w-300 gap-4 rounded-xl border border-white/6 bg-[#0c1018] px-6 py-5 sm:grid-cols-2 lg:grid-cols-4">
 						{trustItems.map((item) => (
@@ -334,6 +326,50 @@ export default function PricingPage() {
 								</span>
 							</div>
 						))}
+					</div>
+				</section>
+
+				{/* Related Pages */}
+				<section className="px-6 py-10 md:py-12 lg:px-8">
+					<div className="mx-auto max-w-300">
+						<h2 className="mb-8 text-center text-[24px] font-bold tracking-tight text-white md:text-[28px]">
+							Explore gym management software solutions
+						</h2>
+						<div className="grid gap-5 md:grid-cols-3">
+							<Link
+								href="/features"
+								className="group rounded-xl border border-white/6 bg-[#0c1018] p-6 transition-colors hover:border-emerald-500/30">
+								<h3 className="font-bold text-white group-hover:text-emerald-400">
+									All Features
+								</h3>
+								<p className="mt-2 text-sm text-slate-400">
+									Explore gym management software features and AI gym
+									software capabilities.
+								</p>
+							</Link>
+							<Link
+								href="/gym-management-software"
+								className="group rounded-xl border border-white/6 bg-[#0c1018] p-6 transition-colors hover:border-emerald-500/30">
+								<h3 className="font-bold text-white group-hover:text-emerald-400">
+									For Solo Gym Owners
+								</h3>
+								<p className="mt-2 text-sm text-slate-400">
+									Gym management software designed for boutique studios
+									and personal trainers.
+								</p>
+							</Link>
+							<Link
+								href="/why-easefit"
+								className="group rounded-xl border border-white/6 bg-[#0c1018] p-6 transition-colors hover:border-emerald-500/30">
+								<h3 className="font-bold text-white group-hover:text-emerald-400">
+									Why EaseFIT
+								</h3>
+								<p className="mt-2 text-sm text-slate-400">
+									Discover why EaseFIT is a better Mindbody alternative
+									for fitness studios.
+								</p>
+							</Link>
+						</div>
 					</div>
 				</section>
 			</main>
