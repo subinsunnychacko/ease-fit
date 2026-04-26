@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 const routes = [
 	{ path: "/", priority: 1, changeFrequency: "weekly" as const },
 	{
