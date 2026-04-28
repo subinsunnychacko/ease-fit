@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Deploy on AWS (S3 + CloudFront + HTTPS)
+
+This project is configured with `output: "export"` and can be deployed as a static site on AWS.
+
+See [`deployment/aws-https.md`](deployment/aws-https.md) for the full step-by-step guide covering:
+
+- S3 bucket setup with Origin Access Control
+- CloudFront distribution configuration
+- ACM TLS certificate provisioning (us-east-1 required)
+- HTTP → HTTPS redirect via viewer protocol policy
+- Ongoing deployment workflow (`sync` + cache invalidation)

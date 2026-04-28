@@ -1,38 +1,22 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import PricingCard from "@/components/pricing/PricingCard";
 import { absoluteUrl } from "@/lib/site";
-import { SEO_KEYWORDS, getAllKeywordsForRoute } from "@/lib/seo/keywords";
+import { generateMetadataWithSEO } from "@/lib/seo/useSEO";
 
-const seo = SEO_KEYWORDS["/pricing"];
-
-export const metadata: Metadata = {
+export const metadata = generateMetadataWithSEO("/pricing", {
 	title: "Gym Management Software Pricing",
-	description: `EaseFIT ${seo.primary} starts free — ${seo.secondary[0]} with no contracts, founding-member discounts, and tiered plans for growing gyms.`,
-	keywords: getAllKeywordsForRoute("/pricing"),
-	openGraph: {
-		title: "Pricing — EaseFIT",
-		description:
-			"A value ladder that grows with you. Start free, upgrade when you see results. First 10 founding members get 50% off.",
-		url: absoluteUrl("/pricing"),
-		images: [
-			{
-				url: "/og-pricing.png",
-				width: 1200,
-				height: 630,
-				alt: "EaseFIT pricing plans for gym management software ranging from free tier to growth plans with booking, CRM, and AI receptionist features",
-			},
-		],
+	descriptionTemplate: (primary, secondary) =>
+		`EaseFIT ${primary} starts free — ${secondary} with no contracts, founding-member discounts, and tiered plans for growing gyms.`,
+	ogTitle: "Pricing — EaseFIT | Gym Management Software Plans",
+	ogDescription:
+		"A value ladder that grows with you. Start free, upgrade when you see results. First 10 founding members get 50% off.",
+	twitterDescription:
+		"Gym management software pricing from free to growth plans. No contracts, no setup fees on self-serve tiers.",
+	ogImage: {
+		url: "/og-pricing.png",
+		alt: "EaseFIT pricing plans for gym management software ranging from free tier to growth plans with booking, CRM, and AI receptionist features",
 	},
-	twitter: {
-		title: "Pricing — EaseFIT",
-		description:
-			"Six tiers from free to $599/mo. No contracts, no setup fees on self-serve tiers.",
-	},
-	alternates: {
-		canonical: absoluteUrl("/pricing"),
-	},
-};
+});
 
 const jsonLd = {
 	"@context": "https://schema.org",

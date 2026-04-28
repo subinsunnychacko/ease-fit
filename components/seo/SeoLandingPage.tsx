@@ -2,6 +2,8 @@ import Link from "next/link";
 import FaqAccordion from "@/components/faq/FaqAccordion";
 import SocialProof from "@/components/common/SocialProof";
 import CTASection from "@/components/common/CTASection";
+import { analyzeReadability, composePageText } from "@/lib/seo/readability";
+import { checkContent, buildPropsHtml } from "@/lib/seo/contentCheck";
 
 type ContentCard = {
 	title: string;
@@ -42,6 +44,20 @@ export default function SeoLandingPage({
 	faqs,
 	jsonLd,
 }: SeoLandingPageProps) {
+	if (process.env.NODE_ENV === "development") {
+		const pageText = composePageText({ description, intro, highlights, painPoints, capabilities });
+		const readabilityScore = analyzeReadability(pageText);
+		console.log(`[Readability:${eyebrow}]`, readabilityScore);
+
+		const propsHtml = buildPropsHtml({ title, description, intro, highlights, painPoints, capabilities, faqs });
+		const contentCheckResult = checkContent(propsHtml, {
+			wordCountThreshold: 300,
+			requireH3: true,
+			partialContentNote: "template props only — page-level sections not included",
+		});
+		console.log(`[ContentCheck:${eyebrow}]`, contentCheckResult);
+	}
+
 	return (
 		<div className="min-h-screen bg-[#070b14] font-(family-name:--font-dm-sans)">
 			<main>

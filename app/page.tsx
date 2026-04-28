@@ -1,29 +1,25 @@
-import type { Metadata } from "next";
 import HeroSection from "@/components/home/HeroSection";
 import SocialProof from "@/components/common/SocialProof";
 import OutcomesSection from "@/components/home/Outcomessection";
 import FeaturesSection from "@/components/home/Featuressection";
 import SearchIntentSection from "@/components/home/SearchIntentSection";
 import CTASection from "@/components/common/CTASection";
-import { SEO_KEYWORDS, getAllKeywordsForRoute } from "@/lib/seo/keywords";
+import { generateMetadataWithSEO } from "@/lib/seo/useSEO";
 
-const seo = SEO_KEYWORDS["/"];
-
-export const metadata: Metadata = {
+export const metadata = generateMetadataWithSEO("/", {
 	title: "AI Gym Management Software",
-	description: `EaseFIT is ${seo.primary} and ${seo.secondary[0]} for solo gym owners — booking, attendance, retention, and AI receptionist in one platform.`,
-	keywords: getAllKeywordsForRoute("/"),
-	openGraph: {
-		images: [
-			{
-				url: "/og-home.png",
-				width: 1200,
-				height: 630,
-				alt: "EaseFIT - AI gym management software combining class booking, member retention, AI receptionist, and attendance tracking for solo gym owners and boutique fitness studios",
-			},
-		],
+	descriptionTemplate: (primary, secondary) =>
+		`EaseFIT is ${primary} and ${secondary} for solo gym owners — booking, attendance, retention, and AI receptionist in one platform.`,
+	ogTitle: "EaseFIT | AI Gym Management Software for Solo Gym Owners",
+	ogDescription:
+		"Replace disconnected booking, attendance, retention, and receptionist tools with one AI-powered gym management platform built for solo operators.",
+	twitterDescription:
+		"All-in-one AI gym management for solo gym owners. Booking, attendance, member retention, and AI receptionist in one platform.",
+	ogImage: {
+		url: "/og-home.png",
+		alt: "EaseFIT - AI gym management software combining class booking, member retention, AI receptionist, and attendance tracking for solo gym owners and boutique fitness studios",
 	},
-};
+});
 
 export default function Home() {
 	return (

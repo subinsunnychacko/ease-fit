@@ -1,40 +1,24 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/contact/ContactForm";
 import Footer from "@/components/contact/ContactFooter";
 import FaqAccordion from "@/components/faq/FaqAccordion";
 import { absoluteUrl } from "@/lib/site";
-import { SEO_KEYWORDS, getAllKeywordsForRoute } from "@/lib/seo/keywords";
+import { generateMetadataWithSEO } from "@/lib/seo/useSEO";
 
-const seo = SEO_KEYWORDS["/contact"];
-
-export const metadata: Metadata = {
-	title: "Gym Management Software Demo",
-	description: `Book a ${seo.primary} or schedule an ${seo.secondary[0]} to claim a founding-member spot — no contracts, no setup fees, cancel anytime.`,
-	keywords: getAllKeywordsForRoute("/contact"),
-	openGraph: {
-		title: "Get Started — EaseFIT",
-		description:
-			"Stop losing members. Start growing your gym. 10 founding spots at 50% off.",
-		url: absoluteUrl("/contact"),
-		images: [
-			{
-				url: "/og-contact.png",
-				width: 1200,
-				height: 630,
-				alt: "Get started with EaseFIT gym management software - claim founding member spot at 50% off with no contracts",
-			},
-		],
+export const metadata = generateMetadataWithSEO("/contact", {
+	title: "Book a Gym Management Software Demo",
+	descriptionTemplate: (primary, secondary) =>
+		`Book a ${primary} or schedule an ${secondary} to claim a founding-member spot — no contracts, no setup fees, cancel anytime.`,
+	ogTitle: "Get Started — EaseFIT",
+	ogDescription:
+		"Stop losing members. Start growing your gym. 10 founding spots at 50% off. Book a 2-minute demo today.",
+	twitterDescription:
+		"Claim a founding spot at 50% off for 3 months. No contracts, no setup fees. Book your gym software demo now.",
+	ogImage: {
+		url: "/og-contact.png",
+		alt: "Get started with EaseFIT gym management software - claim founding member spot at 50% off with no contracts",
 	},
-	twitter: {
-		title: "Get Started — EaseFIT",
-		description:
-			"Claim a founding spot at 50% off for 3 months. No contracts, no setup fees.",
-	},
-	alternates: {
-		canonical: absoluteUrl("/contact"),
-	},
-};
+});
 
 const jsonLd = {
 	"@context": "https://schema.org",

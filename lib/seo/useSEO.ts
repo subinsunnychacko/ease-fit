@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { SEO_KEYWORDS, getAllKeywordsForRoute, type SeoRoute } from "./keywords";
+import { getPrioritizedKeywords } from "./trends";
+import { analyzeMetadata } from "./authority";
+import { runDevValidation, validatePageKeywords } from "./validation";
+import { enrichDescription } from "./queries";
 import { absoluteUrl } from "@/lib/site";
+
+export { getTrendingKeywords } from "./trends";
+export { getQueries, getQueryFaqs } from "./queries";
 
 export interface SEOConfig {
 	title: string;
@@ -90,12 +97,10 @@ export function generateMetadata(
 	route: SeoRoute,
 	config: SEOConfig,
 ): Metadata {
-	const seoData = getSEOData(route);
-
 	return {
 		title: config.title,
 		description: config.description,
-		keywords: seoData.keywords,
+		keywords: getPrioritizedKeywords(route),
 		openGraph: getOGMetadata(route, config),
 		twitter: getTwitterMetadata(config),
 		alternates: {
@@ -115,9 +120,24 @@ export function generateMetadataWithSEO(
 	},
 ): Metadata {
 	const seoData = getSEOData(route);
-	const description = config.descriptionTemplate
+	const rawDescription = config.descriptionTemplate
 		? config.descriptionTemplate(seoData.primary, seoData.secondary[0])
 		: `${seoData.primary}. ${config.title}`;
+	const description = enrichDescription(rawDescription, route);
+
+	if (process.env.NODE_ENV === "development") {
+		runDevValidation(); // global duplicate/structure checks — runs once per process
+
+		const keywords = getPrioritizedKeywords(route);
+		const { score, issues } = analyzeMetadata(config.title, description, keywords);
+		const badge = score >= 80 ? "✓" : score >= 60 ? "~" : "✗";
+		console.log(`[SEO:${route}] metadata ${badge} ${score}/100`);
+		issues.forEach((issue) => console.warn(`  ↳ ${issue}`));
+
+		// Per-page: check primary keyword in H1 (config.title is used as H1 by SeoLandingPage)
+		const { warnings: pageWarnings } = validatePageKeywords(route, config.title);
+		pageWarnings.forEach((w) => console.warn(`  ↳ [${w.type}] ${w.message}`));
+	}
 
 	return generateMetadata(route, {
 		...config,

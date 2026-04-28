@@ -1,37 +1,21 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { absoluteUrl } from "@/lib/site";
-import { SEO_KEYWORDS, getAllKeywordsForRoute } from "@/lib/seo/keywords";
+import { generateMetadataWithSEO } from "@/lib/seo/useSEO";
 
-const seo = SEO_KEYWORDS["/why-easefit"];
-
-export const metadata: Metadata = {
-	title: "Mindbody Alternative",
-	description: `EaseFIT is the ${seo.primary} — a ${seo.secondary[0]} built for solo gym owners that combines class booking, workout logging, and AI voice automation.`,
-	keywords: getAllKeywordsForRoute("/why-easefit"),
-	openGraph: {
-		title: "Why EaseFIT — Not Just Another Gym App",
-		description:
-			"The only platform combining class booking, workout logging, and AI voice automation for solo practitioners.",
-		url: absoluteUrl("/why-easefit"),
-		images: [
-			{
-				url: "/og-why-easefit.png",
-				width: 1200,
-				height: 630,
-				alt: "Why EaseFIT - the only all-in-one platform combining gym booking software, member retention tools, and AI receptionist for solo gym owners",
-			},
-		],
+export const metadata = generateMetadataWithSEO("/why-easefit", {
+	title: "Mindbody Alternative for Boutique Fitness Studios",
+	descriptionTemplate: (primary, secondary) =>
+		`EaseFIT is the ${primary} — a ${secondary} built for solo gym owners that combines class booking, workout logging, and AI voice automation.`,
+	ogTitle: "Why EaseFIT — Not Just Another Gym App",
+	ogDescription:
+		"The only platform combining class booking, workout logging, and AI voice automation for solo practitioners — at a fraction of Mindbody's cost.",
+	twitterDescription:
+		"The only platform combining class booking, workout logging, and AI voice automation at a price that makes sense for solo gym owners.",
+	ogImage: {
+		url: "/og-why-easefit.png",
+		alt: "Why EaseFIT - the only all-in-one platform combining gym booking software, member retention tools, and AI receptionist for solo gym owners",
 	},
-	twitter: {
-		title: "Why EaseFIT — Not Just Another Gym App",
-		description:
-			"The only platform combining class booking, workout logging, and AI voice automation at a price that makes sense.",
-	},
-	alternates: {
-		canonical: absoluteUrl("/why-easefit"),
-	},
-};
+});
 
 const jsonLd = {
 	"@context": "https://schema.org",

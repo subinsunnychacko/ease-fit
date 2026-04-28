@@ -18,144 +18,108 @@ export type SeoKeywordMap = Record<SeoRoute, RouteKeywords>;
 
 export const SEO_KEYWORDS: SeoKeywordMap = {
 	"/": {
+		// volume: medium | competition: medium | cpc: $12–20
 		primary: "AI gym management software",
 		secondary: [
-			"all-in-one gym software",
-			"gym management platform",
-			"AI gym software for small gyms",
-			"boutique gym management software",
-			"gym booking and retention platform",
+			"all-in-one gym software", // volume: medium | cpc: $10–18
+			"boutique gym management software", // volume: low    | cpc: $8–14 | low competition
 		],
 		longTail: [
 			"all-in-one AI gym management software for solo gym owners",
-			"affordable gym management platform for personal trainers",
 			"AI-powered gym software for boutique fitness studios",
-			"gym software to replace booking and CRM tools",
-			"best gym management software under $50 a month",
 		],
 	},
 
 	"/features": {
+		// volume: low-medium | competition: medium | cpc: $5–9
 		primary: "gym management software features",
 		secondary: [
-			"AI gym software features",
-			"gym CRM features",
-			"class booking software features",
-			"gym member retention features",
-			"AI voice receptionist features",
+			"gym CRM features", // volume: low | cpc: $6–10
+			"class booking software features", // volume: low | cpc: $4–8  | low competition
 		],
 		longTail: [
 			"gym management software features for boutique studios",
-			"AI receptionist and member retention features for personal trainers",
 			"class booking and workout logging features for solo gym owners",
-			"gym software with built-in AI performance reports",
-			"engagement scoring and at-risk member alerts for small gyms",
 		],
 	},
 
 	"/pricing": {
+		// volume: low-medium | competition: medium-high | cpc: $10–18
 		primary: "gym management software pricing",
 		secondary: [
-			"affordable gym software",
-			"gym software cost",
-			"free gym management software",
-			"gym software with no contracts",
-			"AI gym receptionist pricing",
+			"free gym management software", // volume: medium | cpc: $8–15
+			"affordable gym software", // volume: low    | cpc: $7–12
 		],
 		longTail: [
-			"cheap gym management software for personal trainers",
 			"gym management software pricing for boutique studios",
 			"free gym management app for solo gym owners",
-			"monthly gym software pricing with no setup fees",
-			"founding member discount on gym management software",
 		],
 	},
 
 	"/why-easefit": {
+		// volume: medium-high | competition: high | cpc: $15–30 — highest CPC in set
 		primary: "Mindbody alternative",
 		secondary: [
-			"Vagaro alternative",
-			"TrueCoach alternative",
-			"TeamUp alternative",
-			"best gym software for solo owners",
-			"integrated gym management platform",
+			"Vagaro alternative", // volume: medium     | cpc: $12–22
+			"TrueCoach alternative", // volume: low-medium | cpc: $8–15  | personal trainer niche
 		],
 		longTail: [
 			"best Mindbody alternative for boutique fitness studios",
 			"simpler Vagaro alternative for solo gym owners",
 			"TrueCoach alternative with built-in class booking for personal trainers",
-			"gym software that combines booking, logging, and AI receptionist",
-			"affordable Mindbody alternative for studios under 200 members",
 		],
 	},
 
 	"/contact": {
+		// volume: low | competition: low | cpc: $12–20 — bottom-of-funnel, highest intent
 		primary: "gym management software demo",
 		secondary: [
-			"EaseFIT demo",
-			"gym software free trial",
-			"book a gym software demo",
-			"AI gym receptionist demo",
-			"gym CRM demo",
+			"gym software free trial", // volume: low-medium | cpc: $8–15
+			"gym CRM demo", // volume: low        | cpc: $10–16 | low competition
 		],
 		longTail: [
 			"free trial of gym management software for boutique studios",
 			"schedule a gym software demo for personal trainers",
-			"gym management demo for solo gym owners switching from Vagaro",
-			"try AI gym receptionist software free for 30 days",
-			"founding member signup for AI gym management software",
 		],
 	},
 
 	"/gym-management-software": {
+		// volume: medium | competition: medium | cpc: $10–15
 		primary: "gym management software for solo gym owners",
 		secondary: [
-			"small gym management software",
-			"boutique studio management software",
-			"personal trainer management software",
-			"gym operations software",
-			"all-in-one gym management system",
+			"small gym management software", // volume: medium     | cpc: $7–12
+			"boutique studio management software", // volume: low-medium | cpc: $6–10 | low competition
+			"personal trainer management software", // volume: medium     | cpc: $7–12
 		],
 		longTail: [
-			"gym management software for personal trainers with under 50 clients",
 			"boutique fitness studio software for owners with 50 to 200 members",
-			"gym software to replace spreadsheets and missed-call voicemails",
-			"lightweight gym management system without enterprise bloat",
 			"class scheduling and attendance software for solo gym owners",
 		],
 	},
 
 	"/ai-gym-receptionist": {
+		// volume: low-medium (fast-growing) | competition: low | cpc: $12–20
 		primary: "AI gym receptionist",
 		secondary: [
-			"24/7 gym call answering software",
-			"virtual receptionist for gyms",
-			"AI phone answering for fitness studios",
-			"missed call recovery for gyms",
-			"automated booking by voice for gyms",
+			"virtual receptionist for gyms", // volume: low | cpc: $8–15
+			"24/7 gym call answering software", // volume: low | cpc: $6–10
 		],
 		longTail: [
 			"AI receptionist for boutique fitness studios after hours",
 			"24/7 AI phone answering for personal trainers",
-			"automated voice booking system for solo gym owners",
 			"AI tool to recover missed calls and book gym classes",
-			"after-hours lead capture software for small gyms",
 		],
 	},
 
 	"/gym-member-retention-software": {
+		// volume: low-medium | competition: low-medium | cpc: $7–12
 		primary: "gym member retention software",
 		secondary: [
-			"gym churn prevention software",
-			"member retention tools for gyms",
-			"gym engagement tracking software",
-			"at-risk member alerts for gyms",
-			"AI gym CRM for retention",
+			"gym churn prevention software", // volume: low | cpc: $6–10 | high commercial intent
+			"member retention tools for gyms", // volume: low | cpc: $5–9
 		],
 		longTail: [
 			"member retention software for boutique fitness studios",
-			"churn prevention tools for personal trainers with small client lists",
-			"gym member engagement tracking for solo gym owners",
 			"software to flag at-risk gym members before they quit",
 			"automated re-engagement campaigns for boutique studios",
 		],

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
+import SmartLinks from "@/components/common/SmartLinks";
 import { siteUrl } from "@/lib/site";
 import { SEO_KEYWORDS } from "@/lib/seo/keywords";
 
@@ -138,6 +139,7 @@ export default function RootLayout({
 			<body className="antialiased">
 				<Navbar />
 				{children}
+				<SmartLinks />
 			</body>
 		</html>
 	);

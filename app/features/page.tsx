@@ -1,39 +1,23 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import FeatureBlock from "@/components/features/FeatureBlock";
 import ComparisonTable from "@/components/features/ComparisonTable";
 import { absoluteUrl } from "@/lib/site";
-import { SEO_KEYWORDS, getAllKeywordsForRoute } from "@/lib/seo/keywords";
+import { generateMetadataWithSEO } from "@/lib/seo/useSEO";
 
-const seo = SEO_KEYWORDS["/features"];
-
-export const metadata: Metadata = {
+export const metadata = generateMetadataWithSEO("/features", {
 	title: "Gym Management Software Features",
-	description: `Explore EaseFIT's ${seo.primary} and ${seo.secondary[0]} — booking, retention, AI receptionist, and performance reports in one platform.`,
-	keywords: getAllKeywordsForRoute("/features"),
-	openGraph: {
-		title: "Features — EaseFIT",
-		description:
-			"One platform. Six tiers. Zero excuses for missing bookings, losing members, or working weekends.",
-		url: absoluteUrl("/features"),
-		images: [
-			{
-				url: "/og-features.png",
-				width: 1200,
-				height: 630,
-				alt: "EaseFIT features overview showing gym management software capabilities including class booking, member retention, AI receptionist, and attendance tracking",
-			},
-		],
+	descriptionTemplate: (primary, secondary) =>
+		`Explore EaseFIT's ${primary} and ${secondary} — booking, retention, AI receptionist, and performance reports in one platform.`,
+	ogTitle: "Features — EaseFIT | Gym Management Software",
+	ogDescription:
+		"One platform. Six tiers. Zero excuses for missing bookings, losing members, or working weekends.",
+	twitterDescription:
+		"AI-powered gym management: booking, retention, voice receptionist, and reports in one platform.",
+	ogImage: {
+		url: "/og-features.png",
+		alt: "EaseFIT features overview showing gym management software capabilities including class booking, member retention, AI receptionist, and attendance tracking",
 	},
-	twitter: {
-		title: "Features — EaseFIT",
-		description:
-			"AI-powered gym management: booking, retention, voice receptionist, and reports in one platform.",
-	},
-	alternates: {
-		canonical: absoluteUrl("/features"),
-	},
-};
+});
 
 const jsonLd = {
 	"@context": "https://schema.org",
